@@ -13,10 +13,10 @@
 // Required third-party libraries
 #import <ARChromeActivity/ARChromeActivity.h>
 #import <ARSafariActivity/ARSafariActivity.h>
-#import <NJKWebViewProgress/NJKWebViewProgress.h>
-#import <NJKWebViewProgress/NJKWebViewProgressView.h>
+#import "NJKWebViewProgress.h"
+#import "NJKWebViewProgressView.h"
 
-@interface JBWebViewController : UIViewController <UIWebViewDelegate, NJKWebViewProgressDelegate>
+@interface JBWebViewController : UIViewController <WKNavigationDelegate, NJKWebViewProgressDelegate>
 
 // Typedef for completion block
 typedef void (^completion)(JBWebViewController *controller);
@@ -25,7 +25,7 @@ typedef void (^completion)(JBWebViewController *controller);
 @property (nonatomic, strong) NSString *loadingString;
 
 // Public variables
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, assign) BOOL hideAddressBar;
 
 // Public header methods
@@ -41,6 +41,7 @@ typedef void (^completion)(JBWebViewController *controller);
 - (void)showFromController:(UIViewController*)controller WithCompletion:(completion)completion;
 - (void)navigateToURL:(NSURL *)url;
 - (void)loadRequest:(NSURLRequest *)request;
+- (void)setProgressBarColor:(UIColor *)color;
 
 // Public return methods
 - (NSString *)getWebTitle;

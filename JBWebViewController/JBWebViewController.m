@@ -19,6 +19,8 @@
     @property (nonatomic, strong) NJKWebViewProgress *progressProxy;
     @property (nonatomic, strong) NJKWebViewProgressView *progressView;
     @property (nonatomic, strong) UIPopoverController *popoverShareController;
+    @property (nonatomic, assign) BOOL isFirstLoad;
+    @property (nonatomic, strong) UIColor *progressBarColor;
 
 @end
 
@@ -54,19 +56,15 @@
     [_titleLabel setTextColor:self.navigationController.navigationBar.tintColor];
     [_subtitleLabel setTextColor:self.navigationController.navigationBar.tintColor];
 
-    // Add NJKWebViewProgressView to UINavigationBar
-    _progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height - 2, self.navigationController.navigationBar.frame.size.width, 2)];
-    [self.navigationController.navigationBar addSubview:_progressView];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    // Standard super class stuff
-    [super viewWillDisappear:animated];
-    
-    // Remove views
-    [_progressView removeFromSuperview];
-    [_titleView removeFromSuperview];
+    if (self.isFirstLoad) {
+        self.isFirstLoad = NO;
+        // Add NJKWebViewProgressView to UINavigationBar
+        _progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height - 2, self.navigationController.navigationBar.frame.size.width, 2)];
+        if (self.progressBarColor) {
+            _progressView.progressBarView.backgroundColor = self.progressBarColor;
+        }
+        [self.navigationController.navigationBar addSubview:_progressView];
+    }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -87,6 +85,7 @@
 
 - (void)setup {
     // Default value
+    self.isFirstLoad = YES;
     _hasExtraButtons = NO;
     
     // Allows navigationbar to overlap webview
@@ -126,16 +125,16 @@
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Share"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     UIBarButtonItem *dismissButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Dismiss"] style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:dismissButton, shareButton, nil]];
-    
+
     // Add a webview
-    _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    _webView = [[WKWebView alloc] initWithFrame:self.view.frame];
     [_webView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     
     [self.view addSubview:_webView];
     
     // Configureing NJKWebViewProgress
     _progressProxy = [[NJKWebViewProgress alloc] init];
-    _webView.delegate = _progressProxy;
+    _webView.navigationDelegate = _progressProxy;
     _progressProxy.webViewProxyDelegate = self;
     _progressProxy.progressDelegate = self;
     
@@ -194,27 +193,27 @@
 #pragma mark - "Navigation"
 
 - (void)navigateToURL:(NSURL *)url {
-    // Tell UIWebView to load url
+    // Tell WebView to load url
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 - (void)reload {
-    // Tell UIWebView to reload
+    // Tell WebView to reload
     [_webView reload];
 }
 
 - (void)navigateBack {
-    // Tell UIWebView to go back
+    // Tell WebView to go back
     [_webView goBack];
 }
 
 - (void)navigateForward {
-    // Tell UIWebView to go forward
+    // Tell WebView to go forward
     [_webView goForward];
 }
 
 - (void)loadRequest:(NSURLRequest *)request {
-    // Tell UIWebView to load request
+    // Tell WebView to load request
     [_webView loadRequest:request];
 }
 
@@ -226,7 +225,7 @@
     ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
     
     // Create share controller from our url
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[self.webView.request.URL] applicationActivities:@[safariActivity, chromeActivity]];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[self.webView.URL] applicationActivities:@[safariActivity, chromeActivity]];
     
     // If device is iPad
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -323,6 +322,10 @@
     [self adjustNavigationbar];
 }
 
+- (void)setProgressBarColor:(UIColor *)color {
+    _progressBarColor = color;
+}
+
 // Get title
 - (NSString *)getWebTitle {
     return _titleLabel.text;
@@ -348,29 +351,27 @@
     return nil;
 }
 
-#pragma mark - UIWebViewDelegate
+#pragma mark - WKWebViewDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    return true;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+    __weak typeof(self) weakSelf = self;
     // Update title when page is loaded
-    NSString *title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-    NSString *subtitle = [webView stringByEvaluatingJavaScriptFromString:@"document.domain"];
-    
-    [self setWebTitle:title];
-    [self setWebSubtitle:subtitle];
+    [webView evaluateJavaScript: @"document.title" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        if ([result isKindOfClass:[NSString class]]) {
+            NSString *title = result;
+            [weakSelf setWebTitle:title];
+        }
+    }];
+
+    [webView evaluateJavaScript: @"document.domain" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        if ([result isKindOfClass:[NSString class]]) {
+            NSString *domain = result;
+            [weakSelf setWebSubtitle:domain];
+        }
+    }];
     
     [self updateNavigationButtons];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    // Log error
-    NSLog(@"%@", [error localizedDescription]);
 }
 
 #pragma mark - NJKWebViewProgressDelegate
@@ -380,14 +381,18 @@
     [_progressView setProgress:progress animated:YES];
     
     // Update title
-    NSString *title = [_webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-    
-    // If no title is found, set it to "Loading.."
-    if(title.length == 0) {
-        [self setWebTitle:_loadingString];
-    } else {
-        [self setWebTitle:title];
-    }
+    __weak typeof(self) weakSelf = self;
+    [_webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        if (!error && [result isKindOfClass:[NSString class]]) {
+            NSString *title = result;
+            // If no title is found, set it to "Loading.."
+            if(title.length == 0) {
+                [weakSelf setWebTitle:_loadingString];
+            } else {
+                [weakSelf setWebTitle:title];
+            }
+        }
+    }];
 }
 
 @end

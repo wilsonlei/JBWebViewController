@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		395395B8CFF99794280F967F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 211625572CB09236AECD540F /* libPods.a */; };
 		3DB09FF31A002AEE00C2A6FF /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB09FF21A002AEE00C2A6FF /* Icons.xcassets */; };
 		3DCC249F1A000151005B9669 /* JBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC249E1A000151005B9669 /* JBWebViewController.m */; };
 		3DCC24A11A0001C4005B9669 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCC24A01A0001C4005B9669 /* WebKit.framework */; };
@@ -21,6 +20,9 @@
 		3DE8B55C1A02596700F02F0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE8B55B1A02596700F02F0E /* CoreGraphics.framework */; };
 		3DE8B55E1A02597900F02F0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE8B55D1A02597900F02F0E /* Foundation.framework */; };
 		3DE8B5601A02597E00F02F0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE8B55F1A02597E00F02F0E /* UIKit.framework */; };
+		BA5FCA5D255CED2A0078A162 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5FCA59255CED2A0078A162 /* NJKWebViewProgressView.m */; };
+		BA5FCA5E255CED2A0078A162 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5FCA5C255CED2A0078A162 /* NJKWebViewProgress.m */; };
+		BC3830CF48FE9EF8DBDD556B /* Pods_JBWebViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0FC6FDFA9CEB8D61B8025 /* Pods_JBWebViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		211625572CB09236AECD540F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB09FF21A002AEE00C2A6FF /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		3DCC249D1A000151005B9669 /* JBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWebViewController.h; sourceTree = "<group>"; };
 		3DCC249E1A000151005B9669 /* JBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWebViewController.m; sourceTree = "<group>"; };
@@ -55,10 +56,15 @@
 		3DE8B55B1A02596700F02F0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3DE8B55D1A02597900F02F0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DE8B55F1A02597E00F02F0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		46C0FC6FDFA9CEB8D61B8025 /* Pods_JBWebViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBWebViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D498A22AFCCEC53F622EF17 /* Pods-JBWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBWebViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBWebViewController/Pods-JBWebViewController.release.xcconfig"; sourceTree = "<group>"; };
 		76C5896B2C32AD4C9E57974B /* libPods-JBWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		928C1BC73E1497152F46199B /* Pods-JBWebViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBWebViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBWebViewController/Pods-JBWebViewController.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC8AADF9FCFEA16F95C3932 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BA5FCA59255CED2A0078A162 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		BA5FCA5A255CED2A0078A162 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		BA5FCA5B255CED2A0078A162 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		BA5FCA5C255CED2A0078A162 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		C304122CA3ACA4DD351ACBB5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +77,7 @@
 				3DE8B55E1A02597900F02F0E /* Foundation.framework in Frameworks */,
 				3DE8B55C1A02596700F02F0E /* CoreGraphics.framework in Frameworks */,
 				3DCC24A11A0001C4005B9669 /* WebKit.framework in Frameworks */,
-				395395B8CFF99794280F967F /* libPods.a in Frameworks */,
+				BC3830CF48FE9EF8DBDD556B /* Pods_JBWebViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +109,7 @@
 				3DE8B55D1A02597900F02F0E /* Foundation.framework */,
 				3DE8B55B1A02596700F02F0E /* CoreGraphics.framework */,
 				76C5896B2C32AD4C9E57974B /* libPods-JBWebViewController.a */,
-				211625572CB09236AECD540F /* libPods.a */,
+				46C0FC6FDFA9CEB8D61B8025 /* Pods_JBWebViewController.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +117,10 @@
 		3DCC249C1A000151005B9669 /* JBWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BA5FCA5A255CED2A0078A162 /* NJKWebViewProgress.h */,
+				BA5FCA5C255CED2A0078A162 /* NJKWebViewProgress.m */,
+				BA5FCA5B255CED2A0078A162 /* NJKWebViewProgressView.h */,
+				BA5FCA59255CED2A0078A162 /* NJKWebViewProgressView.m */,
 				3DCC249D1A000151005B9669 /* JBWebViewController.h */,
 				3DCC249E1A000151005B9669 /* JBWebViewController.m */,
 				3DB09FF21A002AEE00C2A6FF /* Icons.xcassets */,
@@ -189,11 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DCC472B19FFDD54006620A0 /* Build configuration list for PBXNativeTarget "JBWebViewController" */;
 			buildPhases = (
+				4C46D3E6A429A45C060DEB18 /* [CP] Check Pods Manifest.lock */,
 				A46F10D54481BC8D9384B9CC /* Check Pods Manifest.lock */,
 				3DCC470419FFDD54006620A0 /* Sources */,
 				3DCC470519FFDD54006620A0 /* Frameworks */,
 				3DCC470619FFDD54006620A0 /* Resources */,
-				C4B031E926B7B819DFA4F6AA /* Copy Pods Resources */,
+				D740C897AF118CB9091A2A76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,6 +256,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -281,6 +293,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C46D3E6A429A45C060DEB18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JBWebViewController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A46F10D54481BC8D9384B9CC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,19 +330,24 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C4B031E926B7B819DFA4F6AA /* Copy Pods Resources */ = {
+		D740C897AF118CB9091A2A76 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JBWebViewController/Pods-JBWebViewController-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARChromeActivity/ARChromeActivity.framework",
+				"${BUILT_PRODUCTS_DIR}/ARSafariActivity/ARSafariActivity.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARChromeActivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARSafariActivity.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JBWebViewController/Pods-JBWebViewController-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -319,8 +358,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCC471419FFDD54006620A0 /* ViewController.m in Sources */,
+				BA5FCA5D255CED2A0078A162 /* NJKWebViewProgressView.m in Sources */,
 				3DCC249F1A000151005B9669 /* JBWebViewController.m in Sources */,
 				3DCC471119FFDD54006620A0 /* AppDelegate.m in Sources */,
+				BA5FCA5E255CED2A0078A162 /* NJKWebViewProgress.m in Sources */,
 				3DCC470E19FFDD54006620A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -433,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,7 +484,7 @@
 		};
 		3DCC472C19FFDD54006620A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C304122CA3ACA4DD351ACBB5 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 928C1BC73E1497152F46199B /* Pods-JBWebViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JBWebViewController/Info.plist;
@@ -455,7 +496,7 @@
 		};
 		3DCC472D19FFDD54006620A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACC8AADF9FCFEA16F95C3932 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4D498A22AFCCEC53F622EF17 /* Pods-JBWebViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JBWebViewController/Info.plist;

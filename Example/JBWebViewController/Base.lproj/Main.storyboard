@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,60 +16,57 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JBWebViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-1f-6Xl">
-                                <rect key="frame" x="16" y="45" width="343" height="39"/>
+                                <rect key="frame" x="20" y="69" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A drop-in Facebook inspired web browser." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-34-hoi">
-                                <rect key="frame" x="16" y="92" width="343" height="21"/>
+                                <rect key="frame" x="65" y="115" width="284.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hct-60-QvX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://www.apple.com/" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiH-VT-zOu">
-                                <rect key="frame" x="43" y="143" width="289" height="30"/>
+                                <rect key="frame" x="47" y="166" width="320" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5x8-uK-Be6">
-                                <rect key="frame" x="148" y="291" width="79" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5x8-uK-Be6">
+                                <rect key="frame" x="168.5" y="318" width="77" height="30"/>
                                 <state key="normal" title="Show From">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showFrom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYR-uY-j9b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAA-Tb-R1k">
-                                <rect key="frame" x="144" y="217" width="86" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAA-Tb-R1k">
+                                <rect key="frame" x="165" y="244" width="84" height="30"/>
                                 <state key="normal" title="Show modal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yz4-2o-hgc"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mBs-1f-6Xl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BMJ-26-KOY"/>
                             <constraint firstAttribute="centerX" secondItem="kAA-Tb-R1k" secondAttribute="centerX" id="Das-r4-fmA"/>
                             <constraint firstItem="Wpp-34-hoi" firstAttribute="centerX" secondItem="5x8-uK-Be6" secondAttribute="centerX" id="PfU-QY-4v5"/>
                             <constraint firstItem="mBs-1f-6Xl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RSj-8w-zWk"/>
-                            <constraint firstItem="Wpp-34-hoi" firstAttribute="leading" secondItem="mBs-1f-6Xl" secondAttribute="leading" id="RsG-Eg-QeW"/>
-                            <constraint firstItem="Wpp-34-hoi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="92" id="UEG-wV-pmX"/>
                             <constraint firstItem="oiH-VT-zOu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="USK-xQ-cOX"/>
                             <constraint firstAttribute="centerX" secondItem="5x8-uK-Be6" secondAttribute="centerX" id="Vir-Ty-Nqn"/>
                             <constraint firstItem="5x8-uK-Be6" firstAttribute="centerX" secondItem="kAA-Tb-R1k" secondAttribute="centerX" id="ehc-qP-ks7"/>
-                            <constraint firstItem="Wpp-34-hoi" firstAttribute="trailing" secondItem="mBs-1f-6Xl" secondAttribute="trailing" id="fDY-uz-WtO"/>
                             <constraint firstItem="Wpp-34-hoi" firstAttribute="top" secondItem="mBs-1f-6Xl" secondAttribute="bottom" constant="8" id="lHG-5v-b1l"/>
                             <constraint firstItem="mBs-1f-6Xl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="mL8-Ro-X2T"/>
                             <constraint firstItem="kAA-Tb-R1k" firstAttribute="top" secondItem="oiH-VT-zOu" secondAttribute="bottom" constant="44" id="teM-z6-mTb"/>
@@ -77,7 +75,6 @@
                             <constraint firstItem="5x8-uK-Be6" firstAttribute="top" secondItem="kAA-Tb-R1k" secondAttribute="bottom" constant="44" id="yjk-UF-D1J"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="urlField" destination="oiH-VT-zOu" id="pNN-eV-HeB"/>
                     </connections>
@@ -87,4 +84,12 @@
             <point key="canvasLocation" x="304.5" y="348.5"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
